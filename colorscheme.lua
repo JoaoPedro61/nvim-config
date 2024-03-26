@@ -1,1 +1,1 @@
-return "catppuccin"
+return "blue"
