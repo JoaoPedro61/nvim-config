@@ -1,1 +1,1 @@
-return "blue"
+return "oxocarbon"
