@@ -44,6 +44,43 @@ return {
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      lua_ls = {
+        settings = {
+          Lua = {
+            hint = { enable = true, arrayIndex = "Disable" },
+          },
+        },
+      },
+      clangd = {
+        capabilities = {
+          offsetEncoding = "utf-8",
+        },
+      },
+      tsserver = {
+        root_dir = require("lspconfig.util").root_pattern("package.json"),
+      },
+      rust_analyzer = {
+        settings = {
+          ["rust-analyzer"] = {
+            checkOnSave = true,
+            assist = {
+              importEnforceGranularity = true,
+              importPrefix = "crate",
+            },
+            completion = {
+              postfix = {
+                enable = false,
+              },
+            },
+            inlayHints = {
+              lifetimeElisionHints = {
+                enable = "always",
+                useParameterNames = true,
+              },
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
@@ -77,6 +114,17 @@ return {
           desc = "Document Highlighting Clear",
           callback = function() vim.lsp.buf.clear_references() end,
         },
+      },
+    },
+    -- Configure buffer local user commands to add when attaching a language server
+    commands = {
+      Format = {
+        function() vim.lsp.buf.format() end,
+        -- condition to create the user command
+        -- can either be a string of a client capability or a function of `fun(client, bufnr): boolean`
+        cond = "textDocument/formatting",
+        -- the rest of the user command options (:h nvim_create_user_command)
+        desc = "Format file with LSP",
       },
     },
     -- mappings to be set up on attaching of a language server

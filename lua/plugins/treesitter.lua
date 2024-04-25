@@ -9,6 +9,8 @@ return {
       "c",
       "javascript",
       "typescript",
+      "rust",
+      "toml",
     })
   end,
 }
