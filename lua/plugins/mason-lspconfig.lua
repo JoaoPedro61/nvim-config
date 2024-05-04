@@ -7,7 +7,6 @@ return {
         "lua_ls",
         "angularls",
         "bashls",
-        "clangd",
         "cssls",
         "cssmodules_ls",
         "css-variables-language-server",
@@ -23,6 +22,7 @@ return {
         "prettier",
         "rust_analyzer",
         "tailwindcss",
+        "bufls"
       },
     },
   }
