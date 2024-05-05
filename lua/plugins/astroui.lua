@@ -15,6 +15,13 @@ return {
       init = { -- this table overrides highlights in all themes
         -- Normal = { bg = "#000000" },
       },
+      default = function()
+        return {
+          Pmenu = { bg = "NONE" },
+          CursorLine = { bg = "#6e6a86" },
+          FloatBorder = { fg = "#FF6a86" },
+        }
+      end,
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#000000" },
       },
