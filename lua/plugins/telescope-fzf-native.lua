@@ -1,5 +1,3 @@
-print("asçlfkasd");
-
 ---@type LazySpec
 return {
   {
