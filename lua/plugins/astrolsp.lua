@@ -10,10 +10,11 @@ return {
   opts = {
     -- Configuration table of features provided by AstroLSP
     features = {
-      autoformat = true, -- enable or disable auto formatting on start
+      autoformat = { enable = true }, -- enable or disable auto formatting on start
       codelens = true, -- enable/disable codelens refresh on start
       inlay_hints = true, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
+      icons_enabled = true, -- enable/disable icons for LSP diagnostics
     },
     -- customize lsp formatting options
     formatting = {
@@ -69,13 +70,7 @@ return {
             },
             completion = {
               postfix = {
-                enable = false,
-              },
-            },
-            inlayHints = {
-              lifetimeElisionHints = {
-                enable = "always",
-                useParameterNames = true,
+                enable = true,
               },
             },
           },

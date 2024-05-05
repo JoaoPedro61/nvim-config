@@ -15,7 +15,6 @@ return {
         "eslint",
         "html",
         "jsonls",
-        "rust_analyzer",
         "tailwindcss",
         "bufls"
       },
