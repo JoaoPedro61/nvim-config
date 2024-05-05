@@ -60,22 +60,6 @@ return {
       tsserver = {
         root_dir = require("lspconfig.util").root_pattern("package.json"),
       },
-      rust_analyzer = {
-        settings = {
-          ["rust-analyzer"] = {
-            checkOnSave = true,
-            assist = {
-              importEnforceGranularity = true,
-              importPrefix = "crate",
-            },
-            completion = {
-              postfix = {
-                enable = true,
-              },
-            },
-          },
-        },
-      },
     },
     -- customize how language servers are attached
     handlers = {
