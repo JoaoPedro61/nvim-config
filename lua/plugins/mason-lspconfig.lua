@@ -20,27 +20,4 @@ return {
       },
     },
   },
-  {
-    "simrat39/rust-tools.nvim",
-    after = "mason-lspconfig.nvim",
-    init = function()
-      print("asdf")
-    end,
-    opts = {
-      server = {
-        settings = {
-          ['rust-analyzer'] = {
-            cargo = {
-              autoReload = true
-            },
-            inlayHints = {
-              bindingModeHints = { enable = true },
-              closureReturnTypeHints = { enable = "always" },
-              lifetimeElisionHints = { enable = "always", useParameterNames = true },
-            }
-          }
-        }
-      }
-    }
-  },
 }
