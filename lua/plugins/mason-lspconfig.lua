@@ -15,8 +15,7 @@ return {
         "eslint",
         "html",
         "jsonls",
-        "tailwindcss",
-        "bufls"
+        "tailwindcss"
       },
     },
   },
