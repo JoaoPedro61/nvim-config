@@ -39,7 +39,19 @@ return {
     },
     -- enable servers that you already have installed without mason
     servers = {
-      -- "pyright"
+      "tsserver",
+      "lua_ls",
+      "angularls",
+      "bashls",
+      "cssls",
+      "cssmodules_ls",
+      "dockerls",
+      "docker_compose_language_service",
+      "dotls",
+      "eslint",
+      "html",
+      "jsonls",
+      "tailwindcss"
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
@@ -130,4 +142,26 @@ return {
       -- client.server_capabilities.semanticTokensProvider = nil
     end,
   },
+
+  -- set up mason-lspconfig for AstroLSP
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      { "AstroNvim/astrolsp", opts = {} },
+      {
+        "williamboman/mason-lspconfig.nvim", -- MUST be set up before `nvim-lspconfig`
+        dependencies = { "williamboman/mason.nvim" },
+        opts = function()
+          return {
+            -- use AstroLSP setup for mason-lspconfig
+            handlers = { function(server) require("astrolsp").lsp_setup(server) end },
+          }
+        end,
+      },
+    },
+    config = function()
+      -- set up servers configured with AstroLSP
+      vim.tbl_map(require("astrolsp").lsp_setup, require("astrolsp").config.servers)
+    end,
+  }
 }
