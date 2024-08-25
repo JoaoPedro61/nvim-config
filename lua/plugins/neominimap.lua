@@ -49,7 +49,7 @@ return {
                     ---@alias Neominimap.Config.SplitDirection "left" | "right"
                     direction = "right", ---@type Neominimap.Config.SplitDirection
                     ---Automatically close the split window when it is the last window
-                    close_if_last_window = false ---@type boolean
+                    close_if_last_window = true ---@type boolean
                 },
                 --- Used when `layout` is set to `float`
                 float = {
@@ -68,6 +68,7 @@ return {
                     --- @type string | string[] | [string, string][]
                     window_border = "double"
                 },
+                layout = "split",
                 click = {
                     enabled = true
                 },
