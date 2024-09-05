@@ -8,6 +8,13 @@ return {
     name = "catppuccin",
     opts = {
       dim_inactive = { enabled = true, percentage = 0.25 },
+      color_overrides = {
+				mocha = {
+					base = "#000000",
+					mantle = "#000000",
+					crust = "#000000",
+				},
+			},
       highlight_overrides = {
         mocha = function(c)
           return {
