@@ -9,4 +9,5 @@ return {
   { import = "astrocommunity.motion.mini-move" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.utility.lua-json5" },
 }
