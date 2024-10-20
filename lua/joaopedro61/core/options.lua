@@ -2,10 +2,8 @@ local shell = require("joaopedro61.util.shell")
 local platform = require("joaopedro61.util.platform")
 
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
 vim.opt.encoding = "utf-8"
-vim.opt.fileencoding = "utf-8"
 
 vim.opt.number = true
 
