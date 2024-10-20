@@ -6,7 +6,7 @@ local shell = function()
     return nil
   end
 
-  local shell_path = os.getenv("WSL_INTEROP")
+  local shell_path = os.getenv("SHELL")
 
   if shell_path then
     local shell_segments = split(shell_path)
